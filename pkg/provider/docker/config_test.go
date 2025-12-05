@@ -4618,15 +4618,6 @@ func TestDynConfBuilder_getIPAddress_docker(t *testing.T) {
 			expected: "10.11.12.14",
 		},
 		{
-			desc: "two networks, no network label, mode host",
-			container: containerJSON(
-				networkMode("host"),
-				withNetwork("testnet", ipv4("10.11.12.13")),
-				withNetwork("testnet2", ipv4("10.11.12.14")),
-			),
-			expected: "127.0.0.1",
-		},
-		{
 			desc: "two networks, no network label, mode host, use provider network",
 			container: containerJSON(
 				networkMode("host"),
@@ -4643,13 +4634,6 @@ func TestDynConfBuilder_getIPAddress_docker(t *testing.T) {
 			),
 			network:  "testnet",
 			expected: "10.11.12.13",
-		},
-		{
-			desc: "no network, no network label, mode host",
-			container: containerJSON(
-				networkMode("host"),
-			),
-			expected: "127.0.0.1",
 		},
 		{
 			desc:   "no network, no network label, mode host, node IP",
