@@ -246,7 +246,7 @@ func setupServer(staticConfiguration *static.Configuration) (*server.Server, err
 	if err != nil {
 		pluginLogger.Err(err).Msg("Plugins are disabled because an error has occurred.")
 	} else if hasPlugins {
-		pluginLogger.Info().Msg("Plugins loaded.")
+		pluginLogger.Info().Msg("Plugins have loaded.")
 	}
 
 	// Providers plugins
@@ -285,7 +285,7 @@ func setupServer(staticConfiguration *static.Configuration) (*server.Server, err
 		if err != nil {
 			return nil, fmt.Errorf("unable to create SPIFFE x509 source: %w", err)
 		}
-		log.Info().Msg("Successfully obtained SPIFFE SVID.")
+		log.Info().Msg("Successfully got SPIFFE SVID.")
 	}
 
 	transportManager := service.NewTransportManager(spiffeX509Source)

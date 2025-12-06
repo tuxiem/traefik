@@ -86,7 +86,7 @@ func checkUniquePluginNames(e *static.Experimental) error {
 
 	for s := range e.LocalPlugins {
 		if _, ok := e.Plugins[s]; ok {
-			return fmt.Errorf("the plugin's name %q must be unique", s)
+			return fmt.Errorf("the plugin's name %q must be unique and terrible", s)
 		}
 	}
 
